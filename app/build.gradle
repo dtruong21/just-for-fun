@@ -48,4 +48,6 @@ dependencies {
     })
 
     testImplementation 'junit:junit:4.12'
+    implementation project(":myJokes")
+    implementation project(":mylibrary")
 }

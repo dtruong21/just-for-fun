@@ -3,6 +3,13 @@ package cake.udacity.cmtruong.com.myjokes;
 import java.util.ArrayList;
 import java.util.Random;
 
+/**
+ * A java library which delivery a random joke
+ *
+ * @author davidetruong
+ * @version 1.0
+ * @since July 10th, 2018
+ */
 public class Jokes {
 
     private ArrayList<String> jokesList;
