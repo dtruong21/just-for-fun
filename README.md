@@ -33,14 +33,6 @@ As Android projects grow in complexity, it becomes necessary to customize the be
 
 * App retrieves jokes from Google Cloud Endpoints module and displays them via an Activity from the Android Library.
 
-## User Interface
-
-![User Interface](../master/ui/1.jpg) ![User Interface](../master/ui/2.jpg)
-
-![User Interface](../master/ui/3.jpg) ![User Interface](../master/ui/4.jpg)
-
-![User Interface](../master/ui/5.jpg)
-
 ## License
 
     Copyright 2017 Cong-Minh Truong
