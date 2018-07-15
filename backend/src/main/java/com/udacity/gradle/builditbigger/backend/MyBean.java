@@ -1,11 +1,15 @@
 package com.udacity.gradle.builditbigger.backend;
 
-/** The object model for the data we are sending through endpoints */
+import cake.udacity.cmtruong.com.myjokes.Jokes;
+
 public class MyBean {
 
     private String myData;
 
     public String getData() {
+
+        Jokes jokes = new Jokes();
+        myData = jokes.getRandomJoke();
         return myData;
     }
 

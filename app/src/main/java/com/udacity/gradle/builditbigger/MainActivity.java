@@ -11,7 +11,11 @@ import android.widget.Toast;
 import cake.udacity.cmtruong.com.myjokes.Jokes;
 import cake.udacity.cmtruong.com.mylibrary.JokesActivity;
 
-
+/**
+ * @author davidetruong
+ * @version 1.0
+ * @since July 13th, 2018
+ */
 public class MainActivity extends AppCompatActivity {
 
 
@@ -44,6 +48,10 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * Function which get the random joke
+     * @param view
+     */
     public void tellJoke(View view) {
         Jokes jokes = new Jokes();
 

@@ -4,10 +4,11 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Pair;
 
-import com.udacity.gradle.builditbigger.backend.myApi.MyApi;
+import com.google.api.client.extensions.android.http.AndroidHttp;
+import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 
 public class EndPointAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> {
-    private static MyApi myApi = null;
+
     private Context context;
 
     public EndPointAsyncTask(Context context) {
@@ -16,6 +17,7 @@ public class EndPointAsyncTask extends AsyncTask<Pair<Context, String>, Void, St
 
     @Override
     protected String doInBackground(Pair<Context, String>... pairs) {
+
         return null;
     }
 
