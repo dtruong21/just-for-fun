@@ -53,15 +53,15 @@ public class MainActivity extends AppCompatActivity {
      * @param view
      */
     public void tellJoke(View view) {
-        Jokes jokes = new Jokes();
-
-        String joke = jokes.getRandomJoke();
-        Toast.makeText(this, joke, Toast.LENGTH_SHORT).show();
-
-        Intent intent = new Intent(this, JokesActivity.class);
-        intent.putExtra(JokesActivity.JOKE_INTENT_KEY, joke);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
+//        Jokes jokes = new Jokes();
+//
+//        String joke = jokes.getRandomJoke();
+//        Toast.makeText(this, joke, Toast.LENGTH_SHORT).show();
+//
+//        Intent intent = new Intent(this, JokesActivity.class);
+//        intent.putExtra(JokesActivity.JOKE_INTENT_KEY, joke);
+//        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//        startActivity(intent);
     }
 
 
