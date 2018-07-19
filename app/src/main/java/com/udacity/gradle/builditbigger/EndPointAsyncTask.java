@@ -22,13 +22,14 @@ import cake.udacity.cmtruong.com.mylibrary.JokesActivity;
  * @version 1.0
  * @since July 15th, 2018
  */
-public class EndPointAsyncTask extends AsyncTask<Context, Void, String> {
+public class EndPointAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> {
     private static final String TAG = EndPointAsyncTask.class.getSimpleName();
 
     private static MyApi myApi = null;
     private Context context;
 
-    public EndPointAsyncTask() {
+    public EndPointAsyncTask(Context context) {
+        this.context = context;
     }
 
 //    @Override
@@ -52,8 +53,9 @@ public class EndPointAsyncTask extends AsyncTask<Context, Void, String> {
 //        }
 //    }
 
+
     @Override
-    protected String doInBackground(Context... contexts) {
+    protected String doInBackground(Pair<Context, String>... pairs) {
         if (myApi == null) {
             MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(),
                     new AndroidJsonFactory(), null)
