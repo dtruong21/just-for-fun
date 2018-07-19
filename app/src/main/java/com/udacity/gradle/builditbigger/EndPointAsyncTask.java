@@ -22,18 +22,38 @@ import cake.udacity.cmtruong.com.mylibrary.JokesActivity;
  * @version 1.0
  * @since July 15th, 2018
  */
-public class EndPointAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> {
+public class EndPointAsyncTask extends AsyncTask<Context, Void, String> {
     private static final String TAG = EndPointAsyncTask.class.getSimpleName();
 
     private static MyApi myApi = null;
     private Context context;
 
-    public EndPointAsyncTask(Context context) {
-        this.context = context;
+    public EndPointAsyncTask() {
     }
 
+//    @Override
+//    protected String doInBackground(Pair<Context, String>... pairs) {
+//        if (myApi == null) {
+//            MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(),
+//                    new AndroidJsonFactory(), null)
+//                    .setRootUrl("https://just-for-fun-210308.appspot.com/_ah/api/")
+//                    .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
+//                        @Override
+//                        public void initialize(AbstractGoogleClientRequest<?> request) throws IOException {
+//                            request.setDisableGZipContent(true);
+//                        }
+//                    });
+//            myApi = builder.build();
+//        }
+//        try {
+//            return myApi.sayHi("Truong").execute().getData();
+//        } catch (IOException e) {
+//            return e.getMessage();
+//        }
+//    }
+
     @Override
-    protected String doInBackground(Pair<Context, String>... pairs) {
+    protected String doInBackground(Context... contexts) {
         if (myApi == null) {
             MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(),
                     new AndroidJsonFactory(), null)
@@ -59,6 +79,7 @@ public class EndPointAsyncTask extends AsyncTask<Pair<Context, String>, Void, St
 
         Intent intent = new Intent(context, JokesActivity.class);
         intent.putExtra(JokesActivity.JOKE_INTENT_KEY, s);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
 
         Log.d(TAG, "onPostExecute: " + s);

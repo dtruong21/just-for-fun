@@ -23,6 +23,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        if (BuildConfig.FLAVOR.equals("free"))
+            setTitle("Free");
+        else
+            setTitle("Paid");
+
     }
 
 
@@ -48,11 +53,17 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void tellJoke(View view) {
+        EndPointAsyncTask endPointAsyncTask = new EndPointAsyncTask();
+        endPointAsyncTask.execute(this);
+    }
+
     /**
      * Function which get the random joke
+     *
      * @param view
      */
-    public void tellJoke(View view) {
+    // public void tellJoke(View view) {
 //        Jokes jokes = new Jokes();
 //
 //        String joke = jokes.getRandomJoke();
@@ -62,7 +73,8 @@ public class MainActivity extends AppCompatActivity {
 //        intent.putExtra(JokesActivity.JOKE_INTENT_KEY, joke);
 //        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 //        startActivity(intent);
-    }
+    //   new EndPointAsyncTask(this);
+    //  }
 
 
 }
