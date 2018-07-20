@@ -3,7 +3,9 @@
     package="cake.udacity.cmtruong.com.mylibrary">
 
     <application>
-        <activity android:name=".JokesActivity"></activity>
+        <activity android:name=".JokesActivity">
+
+        </activity>
     </application>
 
 </manifest>

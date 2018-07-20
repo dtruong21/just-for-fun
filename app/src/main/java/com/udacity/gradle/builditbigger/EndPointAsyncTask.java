@@ -31,7 +31,6 @@ public class EndPointAsyncTask extends AsyncTask<Pair<Context, String>, Void, St
     public EndPointAsyncTask(Context context) {
         this.context = context;
     }
-
 //    @Override
 //    protected String doInBackground(Pair<Context, String>... pairs) {
 //        if (myApi == null) {
@@ -56,6 +55,7 @@ public class EndPointAsyncTask extends AsyncTask<Pair<Context, String>, Void, St
 
     @Override
     protected String doInBackground(Pair<Context, String>... pairs) {
+
         if (myApi == null) {
             MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(),
                     new AndroidJsonFactory(), null)
@@ -69,7 +69,7 @@ public class EndPointAsyncTask extends AsyncTask<Pair<Context, String>, Void, St
             myApi = builder.build();
         }
         try {
-            return myApi.sayHi("Truong").execute().getData();
+            return myApi.sayHi().execute().getData();
         } catch (IOException e) {
             return e.getMessage();
         }
